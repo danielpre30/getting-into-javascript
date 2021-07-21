@@ -1,12 +1,10 @@
 # Getting Started with JavaScript, v2
 
-[Course Slides](https://static.frontendmasters.com/resources/2019-05-08-getting-into-javascript/getting-into-javascript.pdf)
+These are my personal notes taken from Kyle Simpson's course: Getting Started with JavaScript, v2, availabe at [Frontend Masters](https://frontendmasters.com/courses/getting-started-javascript-v2/). Quotes are from the book [You-Dont-Know-JS First Edition](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md)
 
-[You-Dont-Know-JS Second Edition](https://github.com/getify/You-Dont-Know-JS)
-
-[You-Dont-Know-JS First Edition](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md)
-
-[RunJS](https://runjs.app/)
+- [Course Slides](https://static.frontendmasters.com/resources/2019-05-08-getting-into-javascript/getting-into-javascript.pdf)
+- [You-Dont-Know-JS Second Edition](https://github.com/getify/You-Dont-Know-JS)
+- [RunJS](https://runjs.app/)
 
 ## Types
 
@@ -92,3 +90,35 @@ We get a new block of scope there
 ### Closure
 
 > Closure is when a function “remembers” the variables outside of it, even if you pass that function elsewhere.
+
+### this / Prototypes
+
+#### this
+
+> A function's **this** references the execution context for that call, determined entirely by how the function was called
+
+- **new** binding: *this* is the newly constructed object
+- **explicit** binding: *this* is the object used when we use the functions **call**, **apply**, **bind**
+- **implicit** binding: when the call-site has a context object *this* is equal to that object
+- **default** binding: *this* is equal to the global object
+- **lexical** this: arrow functions adopt the *this* binding from the enclosing (function or global) scope
+
+#### Prototypes
+
+> When attempting a property access on an object that doesn't have that property, the object's internal [[Prototype]] linkage defines where the [[Get]] operation (see Chapter 3) should look next. This cascading linkage from object to object essentially defines a "prototype chain" (somewhat similar to a nested scope chain) of objects to traverse for property resolution.
+
+![Prototype](images/Prototype.png)
+
+#### class {}
+
+> Classes are a design pattern. Many languages provide syntax which enables natural class-oriented software design. JS also has a similar syntax, but it behaves very differently from what you're used to with classes in those other languages.
+> 
+> Classes mean copies.
+> 
+> When traditional classes are instantiated, a copy of behavior from class to instance occurs. When classes are inherited, a copy of behavior from parent to child also occurs.
+> 
+> Polymorphism (having different functions at multiple levels of an inheritance chain with the same name) may seem like it implies a referential relative link from child back to parent, but it's still just a result of copy behavior.
+> 
+> JavaScript does not automatically create copies (as classes imply) between objects.
+
+![class](images/Class.png)
